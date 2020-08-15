@@ -37,15 +37,19 @@
             <h2>{{$value->product_name}}</h2>
             <p>Mã sản phẩm:{{$value->product_id}}</p>
             <img src="images/product-details/rating.png" alt="" />
+            <form action="{{URL::to('save-cart')}}" method="post">
+                {{csrf_field()}}
             <span>
                 <span>{{number_format($value->product_price).' VND'}}</span>
                 <label>Số lượng:</label>
-                <input type="number" value="1" min="1" />
-                <button type="button" class="btn btn-fefault cart">
+                <input name="qty" type="number" value="1" min="1" />
+                <input name="productid_hidden" type="hidden" value="{{$value->product_id}}" />
+                <button type="submit" class="btn btn-fefault cart">
                     <i class="fa fa-shopping-cart"></i>
                     Thêm vào giỏ hàng
                 </button>
             </span>
+            </form>
             <p><b>Tình trạng:</b>Còn hàng</p>
             <p><b>Điều kiện:</b> Mới</p>
             <p><b>Thương hiệu:</b> {{$value->brand_name}}</p>
