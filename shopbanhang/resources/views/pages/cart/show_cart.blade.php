@@ -75,9 +75,20 @@
                             <li>Tổng <span>{{Cart::total().' '.'VND'}}</span></li>
                             <li>Thuế<span>{{Cart::tax().' '.'VND'}}</span></li>
                             <li>Phí vận chuyển : <span>Free</span></li>
-                            <li>Thành tiền<span>{{Cart::total().' '.'VND'}}</span></li>
+                            <li>Thành tiền<span>{{Cart::subtotal().' '.'VND'}}</span></li>
                         </ul>
-                        <a class="btn btn-default check_out" href="{{URL::to('/login-checkout')}}">Thanh toán</a>
+                        <?php
+                        $customer_id = Session::get('customer_id');
+                        if($customer_id!=null){
+                        ?>
+                        <a class="btn btn-default check_out" href="{{URL::to('/checkout')}}">Thanh toán</a>
+                        <?php
+                        }else{
+                        ?>
+                        <a class="btn btn-default check_out" href="{{URL::to('/login-checkout')}}"> Thanh toán</a>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
