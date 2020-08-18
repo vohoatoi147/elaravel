@@ -44,9 +44,7 @@
                                 <div class="cart_quantity_button">
                                     <form action="{{URL::to('/update-cart-quantity')}}" method="post">
                                         {{csrf_field()}}
-
                                         <input class="cart_quantity_input" type="text" name="cart_quantity" value="{{$v_content->qty}}" size="2">
-
                                         <input type="hidden" value="{{$v_content->rowId}}" name="rowId_cart" class="form-control">
                                         <input type="submit" value="Cập nhật" name="update_qty" class="btn btn-default btn-sm">
                                     </form>
@@ -69,17 +67,17 @@
                 </table>
             </div>
             <h4 style="margin: 40px 0 ; font-size: 20px">Chọn hình thức thanh toán</h4>
-            <form action="{{URL::to('/order-place')}}">
+            <form action="{{URL::to('/order-place')}}" method="post">
                 {{csrf_field()}}
             <div class="payment-options">
                 <span>
-                    <label><input name="payment_option" value="bằng ATM" type="checkbox"> Thanh toán ATM</label>
+                    <label><input name="payment_option" value="1" type="checkbox"> Thanh toán ATM</label>
                 </span>
                 <span>
-						<label><input name="payment_option" value="tiền mặt" type="checkbox">Thanh toán khi nhận hàng</label>
+						<label><input name="payment_option" value="2" type="checkbox">Thanh toán bằng tiền mặt</label>
                 </span>
                 <span>
-						<label><input name="payment_option" value="ghi nợ" type="checkbox">Thanh toán bằng thẻ ghi nợ</label>
+						<label><input name="payment_option" value="3" type="checkbox">Thanh toán bằng thẻ ghi nợ</label>
                 </span>
                 <input type="submit" value="Đặt hàng" name="send_oder_place" class="btn btn-primary btn-sm">
 

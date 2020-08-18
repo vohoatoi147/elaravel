@@ -5,11 +5,24 @@ use DB;
 use App\Http\Requests;
 use Session;
 session_start();
+use Cart;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
 {
+    public function AuthLogin(){
+        $admin_id = Session::get('admin_id');
+        if ($admin_id)
+        {
+            return Redirect::to('dashboard');
+        }else{
+            return Redirect::to('admin')->send();
+        }
+    }
+    public function view_order ($oderId){
+        return view('admin.view_order');
+    }
     public function login_checkout () {
         $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get();
         $brand_product = DB::table('tbl_brand')->where('brand_status','0')->orderby('brand_id','desc')->get();
@@ -47,14 +60,41 @@ class CheckoutController extends Controller
         $brand_product = DB::table('tbl_brand')->where('brand_status','0')->orderby('brand_id','desc')->get();
         return view('pages.checkout.payment')->with('category',$cate_product)->with('brand',$brand_product);
     }
-    public function order_place (){
+    public function order_place (Request $request){
+        //insert payment mothod
         $data = array();
-        $data['shipping_name'] = $request->shipping_name ;
-        $data['shipping_email'] = $request->shipping_email ;
-        $data['shipping_address'] = $request->shipping_address ;
-        $data['shipping_notes'] = $request->shipping_notes ;
-        $data['shipping_phone'] = $request->shipping_phone ;
-        $shipping_id = DB::table('tbl_shipping')->insertGetId($data);
+        $data['payment_method'] = $request->payment_option ;
+        $data['payment_status'] = 'Đang chờ xử lí' ;
+        $payment_id = DB::table('tbl_payment')->insertGetId($data);
+        //insert ordder
+        $order_data = array();
+        $order_data['customer_id'] = Session::get('customer_id') ;
+        $order_data['shipping_id'] = Session::get('shipping_id') ;
+        $order_data['payment_id'] = $payment_id ;
+        $order_data['order_total'] = Cart::total() ;
+        $order_data['order_status'] = 'Đang chờ xử lí' ;
+        $order_id = DB::table('tbl_order')->insertGetId($order_data);
+        // insert oder details
+        $content =  Cart::content();
+        foreach ($content as $key => $v_content){
+            $order_d_data = array();
+            $order_d_data['order_id'] = $order_id ;
+            $order_d_data['product_id'] = $v_content->id ;
+            $order_d_data['product_name'] = $v_content->name ;
+            $order_d_data['product_price'] = $v_content->price ;
+            $order_d_data['product_sales_quantity'] = $v_content->qty ;
+            DB::table('tbl_order_details')->insertGetId($order_d_data);
+        }
+        if ($data['payment_method']==1){
+            echo 'Thanh toán bằng thẻ ATM';
+        }elseif ($data['payment_method']==2){
+            $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get();
+            $brand_product = DB::table('tbl_brand')->where('brand_status','0')->orderby('brand_id','desc')->get();
+            Cart::destroy();
+            return view('pages.checkout.handcash')->with('category',$cate_product)->with('brand',$brand_product);
+        }else{
+            echo 'Thanh toán ghi nợ';
+        }
     }
     public function logout_checkout () {
         Session::flush();
@@ -71,4 +111,16 @@ class CheckoutController extends Controller
             return Redirect('/login-checkout');
         }
     }
+    //Order
+    public function manage_order (){
+        $this->AuthLogin();
+        $all_order = DB::table('tbl_order')
+            ->join('tbl_customers','tbl_order.customer_id','=','tbl_customers.customer_id')
+            ->select('tbl_order.*','tbl_customers.customer_name')
+            ->orderby('tbl_order.order_id','desc')->get();
+        $manager_order = view('admin.manage_order')->with('all_order',$all_order);
+        return view('admin_layout')->with('admin.manage_order',$manager_order);
+
+    }
+
 }
