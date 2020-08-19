@@ -6,7 +6,7 @@
     <div class="col-sm-5">
         <div class="view-product">
             <img src="{{URL::to('/public/uploads/product/'.$value->product_image)}}" alt="" />
-            <h3>ZOOM</h3>
+
         </div>
         <div id="similar-product" class="carousel slide" data-ride="carousel">
 
@@ -116,6 +116,7 @@
             <div class="item active">
                 @foreach($relate as $key=>$lienquan)
                 <div class="col-sm-4">
+
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
@@ -128,6 +129,7 @@
                     </div>
                 </div>
                 @endforeach
+
             </div>
         </div>
         <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">

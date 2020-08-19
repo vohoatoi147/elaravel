@@ -154,6 +154,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{{asset('public/backend/js/scripts.js')}}"></script>
 <script src="{{asset('public/backend/js/jquery.slimscroll.js')}}"></script>
 <script src="{{asset('public/backend/js/jquery.nicescroll.js')}}"></script>
+<script src="{{asset('public/backend/ckeditor/ckeditor.js')}}"></script>
+<script type="text/javascript" src="{{asset('public/backend/js/additional-methods.min.js')}}"></script>
+<script>
+    $.validate({
+
+    });
+</script>
+
+<script>
+    CKEDITOR.replace('motasanpham');
+    CKEDITOR.replace('noidungsanpham');
+    CKEDITOR.replace('danhmuc');
+    CKEDITOR.replace('thuonghieu');
+    CKEDITOR.replace('editnoidungsanpham');
+    CKEDITOR.replace('editmotasanpham');
+    CKEDITOR.replace('editthuonghieu');
+    CKEDITOR.replace('editdanhmuc');
+
+
+</script>
+
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="{{('public/backend/js/flot-chart/')}}excanvas.min.js"></script><![endif]-->
 <script src="{{asset('public/backend/js/jquery.scrollTo.js')}}"></script>
 <!-- morris JavaScript -->

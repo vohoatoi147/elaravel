@@ -18,11 +18,11 @@
                     {{csrf_field()}}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tên thương hiệu</label>
-                        <input type="text" class="form-control" name="brand_product_name" id="exampleInputEmail1" placeholder="Tên thương hiệu">
+                        <input type="text" class="form-control" name="brand_product_name" id="" placeholder="Tên thương hiệu">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Mô tả thương hiệu</label>
-                        <textarea style="resize: none" rows="5" class="form-control" name="brand_product_desc" id="exampleInputPassword1" placeholder="Mô tả thương hiệu"> </textarea>
+                        <textarea style="resize: none" rows="5" class="form-control" name="brand_product_desc" id="thuonghieu" placeholder="Mô tả thương hiệu"> </textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Hiển thị</label>

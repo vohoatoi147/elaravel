@@ -32,8 +32,8 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+								<li><a href="tel:0123456"><i class="fa fa-phone"></i>0374600090</a></li>
+								<li><a href="mailto:chonhagiau.com"><i class="fa fa-envelope"></i> chonhagiau.com</a></li>
 							</ul>
 						</div>
 					</div>
@@ -57,37 +57,15 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+							<a href="{{URL::to('/')}}"><img src={{('public/frontend/images/logo.png')}} alt="" /></a>
 						</div>
-						<div class="btn-group pull-right">
-							<div class="btn-group">
-								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-									USA
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="#">Canada</a></li>
-									<li><a href="#">UK</a></li>
-								</ul>
-							</div>
 
-							<div class="btn-group">
-								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-									DOLLAR
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="#">Canadian Dollar</a></li>
-									<li><a href="#">Pound</a></li>
-								</ul>
-							</div>
-						</div>
 					</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 
-								<li><a href="#"><i class="fa fa-star"></i> Yêu thích</a></li>
+								<li><a href="{{URL::to('/')}}"><i class="fa fa-home"></i> Trang chủ</a></li>
                                 <?php
                                 $customer_id = Session::get('customer_id');
                                 $shipping_id = Session::get('shipping_id');
@@ -128,35 +106,17 @@
 		<div class="header-bottom"><!--header-bottom-->
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-9">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						</div>
-						<div class="mainmenu pull-left">
-							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="{{URL::to('/trang-chu')}}" class="active">Trang chủ</a></li>
-								<li class="dropdown"><a href="#">Sản phẩm<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
+					<div class="col-sm-8">
 
-                                    </ul>
-                                </li>
-								<li class="dropdown"><a href="#">Tin tức<i class="fa fa-angle-down"></i></a>
-                                </li>
-								<li><a href="404.html">Giỏ hàng</a></li>
-								<li><a href="contact-us.html">Liên hệ</a></li>
-							</ul>
-						</div>
 					</div>
-					<div class="col-sm-3">
+					<div class="col-sm-4">
+                        <form action="{{URL::to('/tim-kiem')}}" method="post">
+                            {{csrf_field()}}
 						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
+							<input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm"/>
+                            <input type="submit" name="search_items" class="btn-success" value="Tìm" >
 						</div>
+                        </form>
 					</div>
 				</div>
 			</div>
@@ -170,7 +130,7 @@
 					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
 							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
-							<li data-target="#slider-carousel" data-slide-to="1"></li>
+		            					<li data-target="#slider-carousel" data-slide-to="1"></li>
 							<li data-target="#slider-carousel" data-slide-to="2"></li>
 						</ol>
 
@@ -249,7 +209,7 @@
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
                                     @foreach($brand as $key=>$brand)
-									<li><a href="{{URL::to('/thuong-hieu-san-pham/'.$brand->brand_id)}}"> <span class="pull-right">(50)</span>{{$brand->brand_name}}</a></li>
+									<li><a href="{{URL::to('/thuong-hieu-san-pham/'.$brand->brand_id)}}"> <span class="pull-right"></span>{{$brand->brand_name}}</a></li>
                                     @endforeach
 								</ul>
 							</div>
@@ -280,86 +240,6 @@
 	</section>
 
 	<footer id="footer"><!--Footer-->
-		<div class="footer-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-2">
-						<div class="companyinfo">
-							<h2><span>e</span>-shopper</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
-						</div>
-					</div>
-					<div class="col-sm-7">
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-										<img src="{{('public/frontend/images/iframe1.png')}}" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Circle of Hands</p>
-								<h2>24 DEC 2014</h2>
-							</div>
-						</div>
-
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-                                    <img src="{{('public/frontend/images/iframe2.png')}}" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Circle of Hands</p>
-								<h2>24 DEC 2014</h2>
-							</div>
-						</div>
-
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-                                    <img src="{{('public/frontend/images/iframe3.png')}}" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Circle of Hands</p>
-								<h2>24 DEC 2014</h2>
-							</div>
-						</div>
-
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-                                    <img src="{{('public/frontend/images/iframe4.png')}}" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Circle of Hands</p>
-								<h2>24 DEC 2014</h2>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="address">
-							<img src="images/home/map.png" alt="" />
-							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<div class="footer-widget">
 			<div class="container">
 				<div class="row">
@@ -415,7 +295,7 @@
 						<div class="single-widget">
 							<h2>About Shopper</h2>
 							<form action="#" class="searchform">
-								<input type="text" placeholder="Your email address" />
+								<input type="text" placeholder="Nhập địa chỉ mail" />
 								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
 								<p>Get the most recent updates from <br />our site and be updated your self...</p>
 							</form>
@@ -429,8 +309,8 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
-					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+					<p class="pull-left">Copyright © 2020 CNG. </p>
+					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.hoatoi2k.studio">Võ Hòa Tới</a></span></p>
 				</div>
 			</div>
 		</div>

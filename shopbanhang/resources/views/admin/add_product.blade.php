@@ -18,11 +18,11 @@
                     {{csrf_field()}}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tên sản phẩm</label>
-                        <input type="text" class="form-control" name="product_name"  placeholder="Tên sản phẩm">
+                        <input type="text" class="form-control" name="product_name"  placeholder="Tên sản phẩm" data-validation="length" data-validation-length="min4" data-validation-error-msg="Nhập ít nhất 4 kí tự">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Giá sản phẩm</label>
-                        <input type="number" class="form-control" name="product_price"  placeholder="Tên sản phẩm">
+                        <input type="number" class="form-control" name="product_price"  placeholder="Tên sản phẩm" data-validation="length" data-validation-length="min4" data-validation-error-msg="Gía thấp nhất là 1000 VND">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Hình ảnh sản phẩm</label>
@@ -30,11 +30,11 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Mô tả sản phẩm</label>
-                        <textarea style="resize: none" rows="5" class="form-control" name="product_desc"  placeholder="Mô tả sản phẩm"> </textarea>
+                        <textarea style="resize: none" rows="5" class="form-control" name="product_desc" id="motasanpham"  placeholder="Mô tả sản phẩm"> </textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Nội dung sản phẩm</label>
-                        <textarea style="resize: none" rows="8" class="form-control" name="product_content"  placeholder="Nội dung sản phẩm"> </textarea>
+                        <textarea style="resize: none" rows="8" class="form-control" name="product_content" id="noidungsanpham"  placeholder="Nội dung sản phẩm"> </textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Danh mục sản phẩm</label>
