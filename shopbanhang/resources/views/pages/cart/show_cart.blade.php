@@ -73,7 +73,7 @@
                     <div class="total_area">
                         <ul>
                             <li>Tổng <span>{{Cart::total().' '.'VND'}}</span></li>
-                            <li>Thuế<span>{{Cart::tax().' '.'VND'}}</span></li>
+                            <li>Thuế (10%)<span>{{Cart::tax().' '.'VND'}}</span></li>
                             <li>Phí vận chuyển : <span>Free</span></li>
                             <li>Thành tiền<span>{{Cart::subtotal().' '.'VND'}}</span></li>
                         </ul>

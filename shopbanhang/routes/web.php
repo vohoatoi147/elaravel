@@ -88,6 +88,8 @@ Route::get('/view-order/{orderId}','CheckoutController@view_order');
 
 //gui mail
 Route::get('/send-mail','HomeController@send_mail');
+//banner
+Route::get('/manage-banner','HomeController@send_mail');
 
 
 

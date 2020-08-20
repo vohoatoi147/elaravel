@@ -19,11 +19,11 @@
                     {{csrf_field()}}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tên sản phẩm</label>
-                        <input type="text" class="form-control" name="product_name" value="{{$pro->product_name}}">
+                        <input type="text" class="form-control" name="product_name" value="{{$pro->product_name}}" data-validation="length" data-validation-length="min4" data-validation-error-msg="Nhập ít nhất 4 kí tự">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Giá sản phẩm</label>
-                        <input type="number" class="form-control" name="product_price"  value="{{$pro->product_price}}">
+                        <input type="number" class="form-control" name="product_price"  value="{{$pro->product_price}}" data-validation="length" data-validation-length="min4" data-validation-error-msg="Giá ít nhất 1000 VND">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Hình ảnh sản phẩm</label>

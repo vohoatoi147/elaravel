@@ -18,7 +18,7 @@
                     {{csrf_field()}}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tên danh mục</label>
-                        <input type="text" class="form-control" name="category_product_name" id="exampleInputEmail1" placeholder="Tên danh mục">
+                        <input type="text" class="form-control" name="category_product_name" id="exampleInputEmail1" placeholder="Tên danh mục" data-validation="length" data-validation-length="min4" data-validation-error-msg="Nhập ít nhất 4 kí tự">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Mô tả danh mục</label>

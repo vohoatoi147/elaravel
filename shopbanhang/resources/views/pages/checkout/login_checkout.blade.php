@@ -8,8 +8,8 @@
                         <h2>Đăng nhập</h2>
                         <form action="{{URL::to('/login-customer')}}" method="post">
                             {{csrf_field()}}
-                            <input type="text" name="email_account" placeholder="Tài khoản" />
-                            <input type="password" name="password_account" placeholder="Mật khẩu" />
+                            <input type="text" name="email_account" placeholder="Tài khoản" data-validation-length="min4" data-validation-error-msg="Nhập ít nhất 4 kí tự" />
+                            <input type="password" name="password_account" placeholder="Mật khẩu" data-validation-length="min4" data-validation-error-msg="Nhập ít nhất 4 kí tự" />
                             <span>
 								<input type="checkbox" class="checkbox">
 								Ghi nhớ đăng nhập

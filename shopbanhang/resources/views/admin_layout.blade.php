@@ -34,7 +34,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--logo start-->
 <div class="brand">
     <a href="index.html" class="logo">
-        Admin
+        CNG
     </a>
     <div class="sidebar-toggle-box">
         <div class="fa fa-bars"></div>
@@ -51,7 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- user login dropdown start-->
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <img alt="" src="{{asset('public/backend/images/2.png')}}">
+                <img alt="" src="{{asset('public/backend/images/3.png')}}">
                 <span class="username">
                     <?php
                     $name = Session::get('admin_name');
@@ -94,7 +94,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </a>
                     <ul class="sub">
                         <li><a href="{{URL::to('/manage-order')}}">Quản lí đơn hàng</a></li>
-                        <li><a href="{{URL::to('/all-category-product')}}">Liệt kê danh mục sản phẩm</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">

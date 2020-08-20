@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | E-Shopper</title>
+    <title>Chợ nhà giàu</title>
     <link href="{{asset('public/frontend/css/bootstrap.min.')}}css" rel="stylesheet">
     <link href="{{asset('public/frontend/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/frontend/css/prettyPhoto.css')}}" rel="stylesheet">
@@ -57,7 +57,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="{{URL::to('/')}}"><img src={{('public/frontend/images/logo.png')}} alt="" /></a>
+							<a href="{{URL::to('/')}}"><img src={{('public/frontend/images/logo6.jpg')}} alt="" style="width: 220px;height: 100px" /></a>
 						</div>
 
 					</div>
@@ -114,7 +114,7 @@
                             {{csrf_field()}}
 						<div class="search_box pull-right">
 							<input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm"/>
-                            <input type="submit" name="search_items" class="btn-success" value="Tìm" >
+                            <input type="submit" name="search_items" class="btn-primary" value="Tìm" >
 						</div>
                         </form>
 					</div>
@@ -137,39 +137,39 @@
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free E-Commerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+									<h1><span>CNG</span></h1>
+									<h2>GIAO HÀNG 2h HCM</h2>
+									<p>Miễn phí giao hàng toàn quốc cho đơn hàng trên 1.000.000đ. </p>
+									<button type="button" class="btn btn-default get">Mua ngay</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="{{('public/frontend/images/girl1.jpg')}}" class="girl img-responsive" alt="" />
-									<img src="{{('public/frontend/images/pricing.png')}}"  class="pricing" alt="" />
+									<img src="{{('public/frontend/images/slider1.jpg')}}" class="girl img-responsive" alt="" />
+
 								</div>
 							</div>
 							<div class="item">
 								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>100% Responsive Design</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+									<h1><span>CNG</span></h1>
+									<h2>THỬ & ĐỔI SIZE DỄ DÀNG</h2>
+									<p>Dễ dàng đổi nếu size không vừa hoặc sản phẩm không đúng. </p>
+									<button type="button" class="btn btn-default get">Mua ngay</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="{{'public/frontend/images/'}}girl2.jpg" class="girl img-responsive" alt="" />
-									<img src="{{'public/frontend/images/'}}pricing.png"  class="pricing" alt="" />
+									<img src="{{'public/frontend/images/'}}slider2.jpg" class="girl img-responsive" alt="" />
+
 								</div>
 							</div>
 
 							<div class="item">
 								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free Ecommerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+									<h1><span>CNG</span></h1>
+									<h2>CÓ SẴN TẠI CỬA HÀNG</h2>
+									<p>Không phải chờ order. Mẫu mới update liên tục mỗi tháng. </p>
+									<button type="button" class="btn btn-default get">Mua ngay</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="{{'public/frontend/images/'}}girl3.jpg" class="girl img-responsive" alt="" />
-									<img src="{{'public/frontend/images/'}}pricing.png" class="pricing" alt="" />
+									<img src="{{'public/frontend/images/'}}slider3.jpg" class="girl img-responsive" alt="" />
+
 								</div>
 							</div>
 
@@ -193,7 +193,7 @@
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="left-sidebar">
-						<h2>Danh mục sản phẩm</h2>
+						<h2>Danh mục</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
                             @foreach($category as $key=>$cate)
 							<div class="panel panel-default">
@@ -205,7 +205,7 @@
 						</div><!--/category-products-->
 
 						<div class="brands_products"><!--brands_products-->
-							<h2>Thương hiệu sản phẩm</h2>
+							<h2>Thương hiệu</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
                                     @foreach($brand as $key=>$brand)
@@ -245,7 +245,7 @@
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Service</h2>
+							<h2>Địa chỉ của hàng</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="#">Online Help</a></li>
 								<li><a href="#">Contact Us</a></li>
@@ -257,47 +257,47 @@
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Quock Shop</h2>
+							<h2>Dịch vụ khách hàng</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">T-Shirt</a></li>
-								<li><a href="#">Mens</a></li>
-								<li><a href="#">Womens</a></li>
-								<li><a href="#">Gift Cards</a></li>
-								<li><a href="#">Shoes</a></li>
+								<li><a href="#">Hướng dẫn mua hàng</a></li>
+								<li><a href="#">Vận chuyển và giao nhận</a></li>
+								<li><a href="#">Thanh toán</a></li>
+								<li><a href="#">Bảo hành và đổi trả</a></li>
+								<li><a href="#">Xử lí khiếu nại</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Policies</h2>
+							<h2>Thông tin</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Terms of Use</a></li>
-								<li><a href="#">Privecy Policy</a></li>
-								<li><a href="#">Refund Policy</a></li>
-								<li><a href="#">Billing System</a></li>
-								<li><a href="#">Ticket System</a></li>
+								<li><a href="#">Về chúng tôi</a></li>
+								<li><a href="#">Bảo mật thông tin</a></li>
+								<li><a href="#">Tài khoản</a></li>
+								<li><a href="#">Sản phẩm yêu thích</a></li>
+								<li><a href="#">Mua sỉ / Hợp tác</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>About Shopper</h2>
+							<h2>Link tìm kiếm</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Company Information</a></li>
-								<li><a href="#">Careers</a></li>
-								<li><a href="#">Store Location</a></li>
-								<li><a href="#">Affillate Program</a></li>
-								<li><a href="#">Copyright</a></li>
+								<li><a href="#">Xả kho</a></li>
+								<li><a href="#">Giày Sneaker</a></li>
+								<li><a href="#">Giày Nike</a></li>
+								<li><a href="#">Giày Adidas</a></li>
+								<li><a href="#">Giày New Balance</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-3 col-sm-offset-1">
 						<div class="single-widget">
-							<h2>About Shopper</h2>
+							<h2>Góp ý</h2>
 							<form action="#" class="searchform">
 								<input type="text" placeholder="Nhập địa chỉ mail" />
 								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
-								<p>Get the most recent updates from <br />our site and be updated your self...</p>
+								<p>Chất lượng giày tốt miễn chê.<br /> Good store to come.</p>
 							</form>
 						</div>
 					</div>
@@ -325,5 +325,6 @@
 	<script src="{{asset('public/frontend/js/price-range.js')}}"></script>
     <script src="{{asset('public/frontend/js/jquery.prettyPhoto.js')}}"></script>
     <script src="{{asset('public/frontend/js/main.js')}}"></script>
+
 </body>
 </html>

@@ -19,7 +19,7 @@
                         {{csrf_field()}}
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên thương hiệu</label>
-                            <input type="text" value="{{$edit_value->brand_name}}" class="form-control" name="brand_product_name" id="exampleInputEmail1" placeholder="Tên thương hiệu">
+                            <input type="text" value="{{$edit_value->brand_name}}" class="form-control" name="brand_product_name" id="exampleInputEmail1" placeholder="Tên thương hiệu" data-validation="length" data-validation-length="min4" data-validation-error-msg="Nhập ít nhất 4 kí tự">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Mô tả thương hiệu</label>
